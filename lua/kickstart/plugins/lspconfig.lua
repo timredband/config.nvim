@@ -111,6 +111,10 @@ return { -- LSP Configuration & Plugins
             callback = vim.lsp.buf.clear_references,
           })
         end
+
+        if client.name == 'yamlls' then
+          client.server_capabilities.documentFormattingProvider = true -- I add this line
+        end
       end,
     })
 
@@ -170,6 +174,19 @@ return { -- LSP Configuration & Plugins
             },
             -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
             -- diagnostics = { disable = { 'missing-fields' } },
+          },
+        },
+      },
+      yamlls = {
+        filetypes = { 'yml', 'yaml' },
+        settings = {
+          yaml = {
+            format = {
+              enable = true,
+            },
+            schemaStore = {
+              enable = true,
+            },
           },
         },
       },

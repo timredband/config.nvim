@@ -3,8 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  {
-    'towolf/vim-helm',
-    ft = 'helm',
-  },
+  'towolf/vim-helm',
+  ft = 'helm',
 }

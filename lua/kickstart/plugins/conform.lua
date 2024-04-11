@@ -19,7 +19,7 @@ return { -- Autoformat
     },
     formatters_by_ft = {
       lua = { 'stylua' },
-      yaml = { 'prettier' },
+      -- yaml = { 'prettier' },
       bash = { 'shfmt' },
 
       -- Conform can also run multiple formatters sequentially
