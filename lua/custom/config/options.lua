@@ -66,4 +66,5 @@ vim.opt.shell = 'cmd.exe'
 vim.opt.autoread = true
 vim.opt.expandtab = true
 vim.opt.autoindent = true
+vim.opt.smartindent = true
 vim.opt.shiftwidth = 2

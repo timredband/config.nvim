@@ -51,12 +51,6 @@ return { -- Collection of various small independent plugins/modules
       return not vim.startswith(fs_entry.name, '.')
     end
 
-    local gio_open = function()
-      local fs_entry = require('mini.files').get_fs_entry()
-      vim.notify(vim.inspect(fs_entry))
-      vim.fn.system(string.format("gio open '%s'", fs_entry.path))
-    end
-
     local toggle_dotfiles = function()
       show_dotfiles = not show_dotfiles
       local new_filter = show_dotfiles and filter_show or filter_hide
@@ -69,7 +63,6 @@ return { -- Collection of various small independent plugins/modules
         local buf_id = args.data.buf_id
         vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
         vim.keymap.set('n', '-', require('mini.files').close, { buffer = buf_id })
-        vim.keymap.set('n', 'o', gio_open, { buffer = buf_id })
       end,
     })
     -- ... and there is more!

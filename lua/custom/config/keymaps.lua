@@ -27,3 +27,18 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 vim.keymap.set('n', '0', '^')
+
+-- Write with Control-S
+vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Write file' })
+vim.keymap.set('i', '<C-s>', '<C-c><cmd>w<cr>', { desc = 'Write file' })
+vim.keymap.set('c', '<C-s>', '<esc><cmd>w<cr>', { desc = 'Write file' })
+
+-- center cursor while moving through it
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- Replace word under cursor in file
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

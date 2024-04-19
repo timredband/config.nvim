@@ -177,6 +177,7 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
+      pyright = {},
       yamlls = {
         filetypes = { 'yml', 'yaml' },
         settings = {

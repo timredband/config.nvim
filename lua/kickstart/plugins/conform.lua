@@ -21,9 +21,10 @@ return { -- Autoformat
       lua = { 'stylua' },
       -- yaml = { 'prettier' },
       bash = { 'shfmt' },
+      sh = { 'shfmt' },
 
       -- Conform can also run multiple formatters sequentially
-      -- python = { "isort", "black" },
+      python = { 'autopep8' },
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
