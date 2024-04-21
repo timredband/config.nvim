@@ -53,7 +53,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 8
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
@@ -64,7 +64,11 @@ vim.opt.hlsearch = true
 -- custom
 vim.opt.shell = 'cmd.exe'
 vim.opt.autoread = true
+
 vim.opt.expandtab = true
-vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.tabstop = 2
+
+vim.opt.wrap = false

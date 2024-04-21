@@ -1,5 +1,0 @@
-require 'custom.config.api'
-require 'custom.config.filetypes'
-require 'custom.config.global'
-require 'custom.config.keymaps'
-require 'custom.config.options'
