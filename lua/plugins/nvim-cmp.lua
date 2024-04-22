@@ -21,7 +21,6 @@ return { -- Autocompletion
     --  nvim-cmp does not ship with all sources by default. They are split
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-nvim-lua',
     'hrsh7th/cmp-path',
 
     -- If you want to add a bunch of pre-configured snippets,
@@ -87,7 +86,6 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
-        { name = 'nvim_lua' },
       },
     }
   end,
