@@ -36,9 +36,12 @@ return { -- Collection of various small independent plugins/modules
         synchronize = 'w',
         go_in_plus = '<CR>',
       },
+      options = {
+        use_as_default_explorer = true,
+      },
     }
     vim.keymap.set('n', '-', function()
-      require('mini.files').open()
+      require('mini.files').open(vim.api.nvim_buf_get_name(0))
     end, { desc = 'Open MiniFiles' })
 
     local show_dotfiles = true
