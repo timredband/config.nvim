@@ -18,3 +18,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    if vim.fn.argv(0) == '' then
+      require('telescope.builtin').git_files()
+    end
+  end,
+})
