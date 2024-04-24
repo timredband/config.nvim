@@ -113,8 +113,11 @@ return { -- LSP Configuration & Plugins
           })
         end
 
-        if client.name == 'yamlls' then
-          client.server_capabilities.documentFormattingProvider = true -- I add this line
+        if client and client.name == 'eslint' then
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            buffer = event.buf,
+            command = 'EslintFixAll',
+          })
         end
       end,
     })
@@ -133,29 +136,24 @@ return { -- LSP Configuration & Plugins
     --  - cmd (table): Override the default command used to start the server
     --  - filetypes (table): Override the default list of associated filetypes for the server
     --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
+    --  - on_init
     --  - settings (table): Override the default settings passed when initializing the server.
     --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
     local servers = {
-      jsonls = {},
-      -- clangd = {},
-      gopls = {},
-      -- pyright = {},
-      -- rust_analyzer = {},
-      -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-      --
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`tsserver`) will work just fine
-      -- tsserver = {},
       bashls = {
         filetypes = { 'sh', 'bats', 'bash' },
       },
-
+      eslint = {
+        on_init = function(client)
+          client.config.settings.workingDirectory = { directory = client.config.root_dir }
+        end,
+        settings = {
+          -- workingDirectories = { mode = 'auto' }, -- should work but isn't doing anything
+        },
+      },
+      gopls = {},
+      jsonls = {},
       lua_ls = {
-        -- cmd = {...},
-        -- filetypes { ...},
-        -- capabilities = {},
         settings = {
           Lua = {
             runtime = { version = 'LuaJIT' },
@@ -183,7 +181,15 @@ return { -- LSP Configuration & Plugins
         },
       },
       pyright = {},
+      tsserver = {
+        on_init = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+        end,
+      },
       yamlls = {
+        on_init = function(client)
+          client.server_capabilities.documentFormattingProvider = true
+        end,
         filetypes = { 'yml', 'yaml' },
         settings = {
           yaml = {
