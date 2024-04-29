@@ -181,6 +181,7 @@ return { -- LSP Configuration & Plugins
         },
       },
       pyright = {},
+      terraformls = {},
       tsserver = {
         on_init = function(client)
           client.server_capabilities.documentFormattingProvider = false
@@ -191,16 +192,6 @@ return { -- LSP Configuration & Plugins
           client.server_capabilities.documentFormattingProvider = true
         end,
         filetypes = { 'yml', 'yaml' },
-        settings = {
-          yaml = {
-            format = {
-              enable = true,
-            },
-            schemaStore = {
-              enable = true,
-            },
-          },
-        },
       },
     }
 
@@ -217,6 +208,7 @@ return { -- LSP Configuration & Plugins
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
       'stylua', -- Used to format lua code
+      'prettier',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
