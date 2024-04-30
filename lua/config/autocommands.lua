@@ -26,3 +26,20 @@ vim.api.nvim_create_autocmd('VimEnter', {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd('BufWritePre', {
+  desc = 'Delete new lines at EOF',
+  group = vim.api.nvim_create_augroup('delete-new-lines-eof', { clear = true }),
+  callback = function()
+    local cursor_pos = vim.api.nvim_win_get_cursor(0)
+
+    vim.cmd [[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/,$d_]]
+
+    local num_rows = vim.api.nvim_buf_line_count(0)
+    if cursor_pos[1] > num_rows then
+      cursor_pos[1] = num_rows
+    end
+
+    vim.api.nvim_win_set_cursor(0, cursor_pos)
+  end,
+})
