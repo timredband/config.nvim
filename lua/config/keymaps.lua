@@ -47,3 +47,10 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 -- move through quickfix list easier
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zz')
 vim.keymap.set('n', '<C-m>', '<cmd>cprev<CR>zz')
+
+-- [p]aste over [w]ord
+vim.keymap.set('n', '<leader>pw', [[ciw<C-r>0<esc>]])
+-- [p]aste over [s]ingle quoted string
+vim.keymap.set('n', '<leader>ps', [[ci'<C-r>0<esc>]])
+-- [p]aste over [d]ouble quoted string
+vim.keymap.set('n', '<leader>pd', [[ci"<C-r>0<esc>]])

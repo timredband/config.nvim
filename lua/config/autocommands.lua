@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
   callback = function()
     local cursor_pos = vim.api.nvim_win_get_cursor(0)
 
-    vim.cmd [[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/,$d_]]
+    vim.cmd [[keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/,$d_]]
 
     local num_rows = vim.api.nvim_buf_line_count(0)
     if cursor_pos[1] > num_rows then
