@@ -38,6 +38,10 @@ vim.keymap.set('c', '<C-s>', '<esc><cmd>w<cr>', { desc = 'Write file' })
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- move through file slightly faster
+vim.keymap.set('n', '<C-e>', '2<C-e>')
+vim.keymap.set('n', '<C-y>', '2<C-y>')
+
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
@@ -54,3 +58,14 @@ vim.keymap.set('n', '<leader>pw', [[ciw<C-r>0<esc>]])
 vim.keymap.set('n', '<leader>ps', [[ci'<C-r>0<esc>]])
 -- [p]aste over [d]ouble quoted string
 vim.keymap.set('n', '<leader>pd', [[ci"<C-r>0<esc>]])
+
+-- [p]aste last [y]ank
+vim.keymap.set('n', '<leader>py', [["0p]])
+vim.keymap.set('n', '<leader>Py', [["0P]])
+
+-- yank into system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+y$]])
+
+-- [p]aste from system [c]lipboard
+vim.keymap.set('n', '<leader>pc', [["+p]])
