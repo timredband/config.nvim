@@ -18,5 +18,4 @@ return {
       { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'LazyGit' },
     },
   },
-  { 'shellpad/shellpad.nvim', opts = {} },
 }
