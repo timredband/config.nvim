@@ -47,6 +47,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- Replace word under cursor in file
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set('v', '<leader>s', [["xy:%s/<C-r>x/<C-r>x/gI<Left><Left><Left>]])
 
 -- move through quickfix list easier
 vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zz')
