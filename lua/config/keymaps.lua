@@ -30,9 +30,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '0', '^')
 
 -- Write with Control-S
-vim.keymap.set('n', '<C-s>', '<cmd>w<cr>', { desc = 'Write file' })
-vim.keymap.set('i', '<C-s>', '<C-c><cmd>w<cr>', { desc = 'Write file' })
-vim.keymap.set('c', '<C-s>', '<esc><cmd>w<cr>', { desc = 'Write file' })
+vim.keymap.set({ 'i', 'v', 'c', 'n' }, '<C-s>', '<esc><cmd>w<cr>', { desc = 'Write file' })
 
 -- center cursor while moving through it
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
@@ -70,3 +68,4 @@ vim.keymap.set('n', '<leader>Y', [["+y$]])
 
 -- [p]aste from system [c]lipboard
 vim.keymap.set('n', '<leader>pc', [["+p]])
+vim.keymap.set('n', '<leader>Pc', [["+P]])
