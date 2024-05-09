@@ -10,7 +10,7 @@ return { -- LSP Configuration & Plugins
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'folke/neodev.nvim', opts = {} },
     { 'j-hui/fidget.nvim', opts = {} },
-    { 'Hoffs/omnisharp-extended-lsp.nvim', opts = {} },
+    { 'Hoffs/omnisharp-extended-lsp.nvim', opts = {}, config = function() end },
   },
   config = function()
     -- Brief Aside: **What is LSP?**
