@@ -10,6 +10,7 @@ return { -- LSP Configuration & Plugins
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
     { 'folke/neodev.nvim', opts = {} },
     { 'j-hui/fidget.nvim', opts = {} },
+    { 'Hoffs/omnisharp-extended-lsp.nvim', opts = {} },
   },
   config = function()
     -- Brief Aside: **What is LSP?**
@@ -119,6 +120,13 @@ return { -- LSP Configuration & Plugins
             command = 'EslintFixAll',
           })
         end
+
+        if client and client.name == 'omnisharp' then
+          map('gd', require('omnisharp_extended').telescope_lsp_definition, 'Omnisharp: [G]oto [D]efinition')
+          map('gr', require('omnisharp_extended').telescope_lsp_references, 'Omnisharp: [G]oto [R]eferences')
+          map('gI', require('omnisharp_extended').telescope_lsp_implementation, 'Omnisharp: [G]oto [I]mplementation')
+          map('<leader>D', require('omnisharp_extended').telescope_lsp_type_definition, 'Omnisharp: Type [D]efinition')
+        end
       end,
     })
 
@@ -180,6 +188,7 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
+      omnisharp = {},
       pyright = {},
       terraformls = {},
       tsserver = {
