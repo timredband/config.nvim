@@ -69,3 +69,14 @@ vim.keymap.set('n', '<leader>Y', [["+y$]])
 -- [p]aste from system [c]lipboard
 vim.keymap.set('n', '<leader>pc', [["+p]])
 vim.keymap.set('n', '<leader>Pc', [["+P]])
+
+-- toggle fold method
+vim.keymap.set('n', '<leader>zt', function()
+  if vim.opt.foldmethod:get() == 'manual' then
+    vim.opt.foldmethod = 'indent'
+    vim.cmd 'execute "normal zM"' --close all folds
+  else
+    vim.opt.foldmethod = 'manual'
+    vim.cmd 'execute "normal zR"' -- open all fold
+  end
+end)
