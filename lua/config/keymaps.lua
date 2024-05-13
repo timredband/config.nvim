@@ -62,7 +62,7 @@ vim.keymap.set('n', '<leader>pd', [[ci"<C-r>0<esc>]])
 vim.keymap.set('n', '<leader>py', [["0p]])
 vim.keymap.set('n', '<leader>Py', [["0P]])
 
--- yank into system clipboard
+-- [y]ank into system clipboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 vim.keymap.set('n', '<leader>Y', [["+y$]])
 
@@ -72,11 +72,11 @@ vim.keymap.set('n', '<leader>Pc', [["+P]])
 
 -- toggle fold method
 vim.keymap.set('n', '<leader>zt', function()
-  if vim.opt.foldmethod:get() == 'manual' then
-    vim.opt.foldmethod = 'indent'
+  if vim.opt_local.foldmethod:get() == 'manual' then
+    vim.opt_local.foldmethod = 'indent'
     vim.cmd 'execute "normal zM"' --close all folds
   else
-    vim.opt.foldmethod = 'manual'
+    vim.opt_local.foldmethod = 'manual'
     vim.cmd 'execute "normal zR"' -- open all fold
   end
 end)
