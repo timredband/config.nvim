@@ -48,6 +48,9 @@ vim.keymap.set('n', '<C-m>', '<cmd>cprev<CR>zz')
 vim.keymap.set('n', '<M-n>', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<M-m>', '<cmd>lprev<CR>zz')
 
+-- close quicklist or location list easier
+vim.keymap.set('n', 'Q', '<cmd>cclose<CR><cmd>lclose<CR>')
+
 -- [p]aste over [w]ord
 vim.keymap.set('n', '<leader>pw', [[ciw<C-r>0<esc>]])
 -- [p]aste over [s]ingle quoted string
