@@ -201,6 +201,13 @@ return { -- LSP Configuration & Plugins
           client.server_capabilities.documentFormattingProvider = true
         end,
         filetypes = { 'yml', 'yaml' },
+        settings = {
+          yaml = {
+            schemas = {
+              ['https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json'] = '*_test.yaml',
+            },
+          },
+        },
       },
     }
 
