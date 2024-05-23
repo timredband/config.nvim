@@ -55,6 +55,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         preview = {
           filesize_limit = 0.1, -- MB
         },
+        file_ignore_patterns = { '^./.git/', '^node_modules/', '^vendor/' },
       },
       -- pickers = {}
       extensions = {
@@ -76,7 +77,6 @@ return { -- Fuzzy Finder (files, lsp, etc)
     pcall(require('telescope').load_extension, 'fzf')
     pcall(require('telescope').load_extension, 'ui-select')
     pcall(require('telescope').load_extension, 'live_grep_args')
-
     -- See `:help telescope.builtin`
     local builtin = require 'telescope.builtin'
     local extensions = require('telescope').extensions
