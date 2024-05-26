@@ -30,8 +30,8 @@ vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- move through file slightly faster
-vim.keymap.set('n', '<C-e>', '2<C-e>')
-vim.keymap.set('n', '<C-y>', '2<C-y>')
+vim.keymap.set('n', '<C-e>', '3<C-e>')
+vim.keymap.set('n', '<C-y>', '3<C-y>')
 
 vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
