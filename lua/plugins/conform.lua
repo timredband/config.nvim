@@ -14,17 +14,19 @@ return { -- Autoformat
   opts = {
     notify_on_error = false,
     format_on_save = {
-      timeout_ms = 500,
+      timeout_ms = 1000,
       lsp_fallback = true,
     },
     formatters_by_ft = {
-      lua = { 'stylua' },
-      -- yaml = { 'prettier' },
       bash = { 'shfmt' },
-      sh = { 'shfmt' },
+      lua = { 'stylua' },
+      markdown = { 'prettier' },
+
+      -- yaml = { 'prettier' },
 
       -- Conform can also run multiple formatters sequentially
       python = { 'autopep8' },
+      sh = { 'shfmt' },
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
