@@ -74,9 +74,9 @@ vim.keymap.set('n', '<leader>Pc', [["+P]])
 vim.keymap.set('n', '<leader>zt', function()
   if vim.opt_local.foldmethod:get() == 'manual' then
     vim.opt_local.foldmethod = 'indent'
-    vim.cmd 'execute "normal zM"' --close all folds
+    return 'zM'
   else
     vim.opt_local.foldmethod = 'manual'
-    vim.cmd 'execute "normal zR"' -- open all fold
+    return 'zR'
   end
-end)
+end, { expr = true })
