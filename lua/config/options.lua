@@ -62,7 +62,6 @@ vim.opt.scrolloff = 8
 vim.opt.hlsearch = true
 
 -- custom
-vim.opt.shell = 'cmd.exe'
 vim.opt.autoread = true
 
 vim.opt.expandtab = true
@@ -72,3 +71,8 @@ vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 
 vim.opt.wrap = false
+
+-- fix shell on windows
+vim.opt.shellcmdflag = '-c'
+vim.opt.shellxquote = ''
+vim.opt.shellxescape = ''

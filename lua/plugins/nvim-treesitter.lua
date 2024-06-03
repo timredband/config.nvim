@@ -1,7 +1,7 @@
 return { -- Highlight, edit, and navigate code
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
-  version = '*',
+  commit = '2c1eb02e92734406866b993bd87111891830455b',
   config = function()
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     --

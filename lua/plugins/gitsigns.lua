@@ -15,4 +15,30 @@ return { -- Adds git related signs to the gutter, as well as utilities for manag
     },
     current_line_blame = true,
   },
+  config = function(_, opts)
+    opts.on_attach = function()
+      local gitsigns = require 'gitsigns'
+      vim.keymap.set('n', '<leader>td', gitsigns.toggle_deleted)
+      vim.keymap.set('n', '<leader>tD', gitsigns.diffthis)
+      vim.keymap.set('n', '<leader>tr', gitsigns.reset_hunk)
+
+      vim.keymap.set('n', '[c', function()
+        if vim.wo.diff then
+          vim.cmd.normal { '[c', bang = true }
+        else
+          gitsigns.nav_hunk 'next'
+        end
+      end, { desc = 'Go to next diff hunk' })
+
+      vim.keymap.set('n', ']c', function()
+        if vim.wo.diff then
+          vim.cmd.normal { ']c', bang = true }
+        else
+          gitsigns.nav_hunk 'prev'
+        end
+      end, { desc = 'Go to prev diff hunk' })
+    end
+
+    require('gitsigns').setup(opts)
+  end,
 }

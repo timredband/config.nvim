@@ -1,4 +1,5 @@
 local nsMiniFiles = vim.api.nvim_create_namespace 'mini_files_git'
+local autocmd = vim.api.nvim_create_autocmd
 local _, MiniFiles = pcall(require, 'mini.files')
 
 -- Cache for git status
@@ -27,31 +28,16 @@ local function mapSymbols(status)
   return result.symbol, result.hlGroup
 end
 
+---@param cwd string
+---@param callback function
 local function fetchGitStatus(cwd, callback)
-  local stdout = (vim.uv or vim.loop).new_pipe(false)
-  local handle, pid
-  handle, pid = (vim.uv or vim.loop).spawn(
-    'git',
-    {
-      args = { 'status', '--ignored', '--porcelain' },
-      cwd = cwd,
-      stdio = { nil, stdout, nil },
-    },
-    vim.schedule_wrap(function(code, signal)
-      if code == 0 then
-        stdout:read_start(function(err, content)
-          if content then
-            callback(content)
-            vim.g.content = content
-          end
-          stdout:close()
-        end)
-      else
-        vim.notify('Git command failed with exit code: ' .. code, vim.log.levels.ERROR)
-        stdout:close()
-      end
-    end)
-  )
+  local function on_exit(content)
+    if content.code == 0 then
+      callback(content.stdout)
+      vim.g.content = content.stdout
+    end
+  end
+  vim.system({ 'git', 'status', '--ignored', '--porcelain' }, { text = true, cwd = cwd }, on_exit)
 end
 
 local function escapePattern(str)
@@ -156,6 +142,40 @@ end
 local function clearCache()
   gitStatusCache = {}
 end
+
+local function augroup(name)
+  return vim.api.nvim_create_augroup('MiniFiles_' .. name, { clear = true })
+end
+
+autocmd('User', {
+  group = augroup 'start',
+  pattern = 'MiniFilesExplorerOpen',
+  -- pattern = { "minifiles" },
+  callback = function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    updateGitStatus(bufnr)
+  end,
+})
+
+autocmd('User', {
+  group = augroup 'close',
+  pattern = 'MiniFilesExplorerClose',
+  callback = function()
+    clearCache()
+  end,
+})
+
+autocmd('User', {
+  group = augroup 'update',
+  pattern = 'MiniFilesBufferUpdate',
+  callback = function(sii)
+    local bufnr = sii.data.buf_id
+    local cwd = vim.fn.expand '%:p:h'
+    if gitStatusCache[cwd] then
+      updateMiniWithGit(bufnr, gitStatusCache[cwd].statusMap)
+    end
+  end,
+})
 
 local M = {}
 M.updateGitStatus = updateGitStatus
