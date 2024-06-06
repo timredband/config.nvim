@@ -69,40 +69,5 @@ return { -- Collection of various small independent plugins/modules
         vim.keymap.set('n', '-', require('mini.files').close, { buffer = buf_id })
       end,
     })
-
-    local mini_git = require 'plugins.mini.mini-files-git'
-
-    vim.api.nvim_create_autocmd('User', {
-      group = vim.api.nvim_create_augroup('MiniFiles_start', { clear = true }),
-      pattern = 'MiniFilesExplorerOpen',
-      callback = function()
-        local bufnr = vim.api.nvim_get_current_buf()
-        mini_git.updateGitStatus(bufnr)
-      end,
-    })
-
-    vim.api.nvim_create_autocmd('User', {
-      group = vim.api.nvim_create_augroup('MiniFiles_close', { clear = true }),
-      pattern = 'MiniFilesExplorerClose',
-      callback = function()
-        mini_git.clearCache()
-      end,
-    })
-
-    vim.api.nvim_create_autocmd('User', {
-      group = vim.api.nvim_create_augroup('MiniFiles_update', { clear = true }),
-      pattern = 'MiniFilesBufferUpdate',
-      callback = function(sii)
-        local bufnr = sii.data.buf_id
-        local cwd = vim.fn.expand '%:p:h'
-        local gitStatusCache = mini_git.getGitStatusCache()
-        if gitStatusCache[cwd] then
-          mini_git.updateMiniWithGit(bufnr, gitStatusCache[cwd].statusMap)
-        end
-      end,
-    })
-
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
   end,
 }
