@@ -8,7 +8,6 @@ return { -- LSP Configuration & Plugins
 
     -- Useful status updates for LSP.
     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-    { 'folke/neodev.nvim', opts = {} },
     { 'j-hui/fidget.nvim', opts = {} },
     { 'Hoffs/omnisharp-extended-lsp.nvim', opts = {}, config = function() end },
   },
@@ -166,10 +165,10 @@ return { -- LSP Configuration & Plugins
           Lua = {
             runtime = { version = 'LuaJIT' },
             workspace = {
-              -- diagnostics = {
-              --   -- Get the language server to recognize the `vim` global
-              --   globals = { 'vim' },
-              -- },
+              diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+              },
               checkThirdParty = false,
               -- Tells lua_ls where to find all the Lua files that you have loaded
               -- for your neovim configuration.
