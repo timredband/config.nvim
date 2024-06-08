@@ -48,8 +48,8 @@ vim.keymap.set('n', '<C-m>', '<cmd>cprev<CR>zz')
 vim.keymap.set('n', '<M-n>', '<cmd>lnext<CR>zz')
 vim.keymap.set('n', '<M-m>', '<cmd>lprev<CR>zz')
 
--- close quicklist or location list easier
-vim.keymap.set('n', 'Q', '<cmd>cclose<CR><cmd>lclose<CR>')
+-- close quicklist, location list, trouble list easier
+vim.keymap.set('n', 'Q', '<cmd>cclose<CR><cmd>lclose<CR><cmd>Trouble close<CR>')
 
 -- [p]aste over [w]ord
 vim.keymap.set('n', '<leader>pw', [[ciw<C-r>0<esc>]])
@@ -72,6 +72,7 @@ vim.keymap.set('n', '<leader>Pc', [["+P]])
 
 -- toggle fold method
 vim.keymap.set('n', '<leader>zt', function()
+  ---@diagnostic disable-next-line: undefined-field
   if vim.opt_local.foldmethod:get() == 'manual' then
     vim.opt_local.foldmethod = 'indent'
     return 'zM'
