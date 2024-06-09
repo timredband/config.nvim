@@ -22,6 +22,7 @@ return { -- Autocompletion
     --  into multiple repos for maintenance purposes.
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    'hrsh7th/cmp-nvim-lsp-signature-help',
 
     -- If you want to add a bunch of pre-configured snippets,
     --    you can use this plugin to help you. It even has snippets
@@ -91,6 +92,7 @@ return { -- Autocompletion
           name = 'lazydev',
           group_index = 0, -- set group index to 0 to skip loading LuaLS completions
         },
+        { name = 'nvim_lsp_signature_help' },
       },
     }
   end,
