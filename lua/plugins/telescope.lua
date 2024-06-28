@@ -55,7 +55,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         preview = {
           filesize_limit = 0.1, -- MB
         },
-        file_ignore_patterns = { '^./.git/', '^node_modules/', '^vendor/' },
+        file_ignore_patterns = { '^./.git/', '^node_modules/', '^vendor/', 'package%-lock.json' },
       },
       -- pickers = {}
       extensions = {
