@@ -25,7 +25,8 @@ return { -- Autoformat
       -- yaml = { 'prettier' },
 
       -- Conform can also run multiple formatters sequentially
-      python = { 'autopep8' },
+      -- python = { 'autopep8' },
+      python = { 'black' },
       sh = { 'shfmt' },
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
