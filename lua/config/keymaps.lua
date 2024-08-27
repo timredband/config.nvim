@@ -70,6 +70,10 @@ vim.keymap.set('n', '<leader>Pc', [["+P]])
 -- [p]aste two lines down
 vim.keymap.set('n', '<leader>po', [[o<esc>"0p]])
 
+-- [p]aste [d]eleted
+vim.keymap.set('n', '<leader>pD', [[""p]])
+vim.keymap.set('n', '<leader>PD', [[""P]])
+
 -- toggle fold method
 vim.keymap.set('n', '<leader>zt', function()
   ---@diagnostic disable-next-line: undefined-field
