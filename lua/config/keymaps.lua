@@ -86,3 +86,13 @@ vim.keymap.set('n', '<leader>zt', function()
     return 'zR'
   end
 end, { expr = true })
+
+vim.keymap.set('n', '<leader>dt', function()
+  local config = vim.diagnostic.config
+  local vt = config().virtual_text
+  config {
+    virtual_text = not vt,
+    underline = not vt,
+    signs = not vt,
+  }
+end, { desc = '[D]iagnostic [T]oggle' })
