@@ -66,6 +66,7 @@ vim.keymap.set('n', '<leader>pQ', function()
   vim.cmd(command)
 end)
 
+-- [p]aste last [y]ank
 vim.keymap.set('n', '<leader>py', [["0p]])
 vim.keymap.set('n', '<leader>Py', [["0P]])
 
