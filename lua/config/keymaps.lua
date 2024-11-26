@@ -52,14 +52,20 @@ vim.keymap.set('n', 'Q', '<cmd>cclose<CR><cmd>lclose<CR><cmd>Trouble close<CR>')
 vim.keymap.set('n', '<leader>pw', function()
   return 'ciw' .. vim.fn.getreg('0'):gsub('\n', '') .. '<esc>'
 end, { expr = true })
+vim.keymap.set('n', '<leader>pW', function()
+  return 'ciw' .. vim.fn.getreg('"'):gsub('\n', '') .. '<esc>'
+end, { expr = true })
 
 -- [p]aste over [q]uoted strings
 vim.keymap.set('n', '<leader>pq', function()
   local command = [[normal ciq]] .. vim.fn.getreg('0'):gsub('\n', '')
   vim.cmd(command)
 end)
+vim.keymap.set('n', '<leader>pQ', function()
+  local command = [[normal ciq]] .. vim.fn.getreg('"'):gsub('\n', '')
+  vim.cmd(command)
+end)
 
--- [p]aste last [y]ank
 vim.keymap.set('n', '<leader>py', [["0p]])
 vim.keymap.set('n', '<leader>Py', [["0P]])
 
