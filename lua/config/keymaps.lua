@@ -49,16 +49,15 @@ vim.keymap.set('n', '<M-m>', '<cmd>lprev<CR>zz')
 vim.keymap.set('n', 'Q', '<cmd>cclose<CR><cmd>lclose<CR><cmd>Trouble close<CR>')
 
 -- [p]aste over [w]ord
-vim.keymap.set('n', '<leader>pw', [[ciw<C-r>0<esc>]])
-vim.keymap.set('n', '<leader>pW', [[<cmd>let @a=@"<CR>ciw<C-r>a<esc>]])
+vim.keymap.set('n', '<leader>pw', function()
+  return 'ciw' .. vim.fn.getreg('0'):gsub('\n', '') .. '<esc>'
+end, { expr = true })
 
--- [p]aste over [s]ingle quoted string
-vim.keymap.set('n', '<leader>ps', [[ci'<C-r>0<esc>]])
-vim.keymap.set('n', '<leader>pS', [[<cmd>let @a=@"<CR>ci'<C-r>a<esc>]])
-
--- [p]aste over [d]ouble quoted string
-vim.keymap.set('n', '<leader>pd', [[ci"<C-r>0<esc>]])
-vim.keymap.set('n', '<leader>pD', [[<cmd>let @a=@"<CR>ci"<C-r>a<esc>]])
+-- [p]aste over [q]uoted strings
+vim.keymap.set('n', '<leader>pq', function()
+  local command = [[normal ciq]] .. vim.fn.getreg('0'):gsub('\n', '')
+  vim.cmd(command)
+end)
 
 -- [p]aste last [y]ank
 vim.keymap.set('n', '<leader>py', [["0p]])
