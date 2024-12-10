@@ -23,6 +23,7 @@ return { -- Autocompletion
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-nvim-lsp-signature-help',
+    'hrsh7th/cmp-buffer',
   },
   config = function()
     -- See `:help cmp`
@@ -81,6 +82,7 @@ return { -- Autocompletion
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path' },
+        { name = 'buffer' },
         {
           name = 'lazydev',
           group_index = 0, -- set group index to 0 to skip loading LuaLS completions
