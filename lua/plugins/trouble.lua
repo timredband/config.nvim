@@ -10,11 +10,11 @@ return {
     },
     {
       '[t',
-      '<cmd>Trouble next<cr>',
+      '<cmd>Trouble diagnostics next<cr><cmd>Trouble diagnostics jump<cr>',
     },
     {
       ']t',
-      '<cmd>Trouble prev<cr>',
+      '<cmd>Trouble diagnostics prev<cr><cmd>Trouble diagnostics jump<cr>',
     },
   },
 }
