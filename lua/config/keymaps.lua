@@ -22,6 +22,12 @@ vim.keymap.set('n', '0', '^')
 -- Write with Control-S
 vim.keymap.set({ 'i', 'v', 'c', 'n' }, '<C-s>', '<esc><cmd>w<cr>', { desc = 'Write file' })
 
+-- Write {}
+vim.keymap.set('i', '<C-k>', '{}', { desc = 'Write {}' })
+
+-- Write []
+vim.keymap.set('i', '<C-j>', '[]', { desc = 'Write []' })
+
 -- center cursor while moving through it
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
