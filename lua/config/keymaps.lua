@@ -36,20 +36,20 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-e>', '8<C-e>')
 vim.keymap.set('n', '<C-y>', '8<C-y>')
 
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
+vim.keymap.set('n', 'n', 'nzvzz')
+vim.keymap.set('n', 'N', 'Nzvzz')
 
 -- Replace word under cursor in file
 vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set('v', '<leader>s', [["xy:%s/\<<C-r>x\>/<C-r>x/gI<Left><Left><Left>]])
 
 -- move through quickfix list easier
-vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zz')
-vim.keymap.set('n', '<C-m>', '<cmd>cprev<CR>zz')
+vim.keymap.set('n', '<C-n>', '<cmd>cnext<CR>zvzz')
+vim.keymap.set('n', '<C-m>', '<cmd>cprev<CR>zvzz')
 
 -- move through location list easier with
-vim.keymap.set('n', '<M-n>', '<cmd>lnext<CR>zz')
-vim.keymap.set('n', '<M-m>', '<cmd>lprev<CR>zz')
+vim.keymap.set('n', '<M-n>', '<cmd>lnext<CR>zvzz')
+vim.keymap.set('n', '<M-m>', '<cmd>lprev<CR>zvzz')
 
 -- close quicklist, location list, trouble list easier
 vim.keymap.set('n', 'Q', '<cmd>cclose<CR><cmd>lclose<CR><cmd>Trouble close<CR>')
