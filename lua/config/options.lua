@@ -67,4 +67,6 @@ vim.opt.tabstop = 2
 
 vim.opt.wrap = false
 
-vim.opt.grepprg = 'rg --vimgrep'
+vim.opt.grepprg = 'rg -i --vimgrep'
+
+-- vim.opt.diffopt = 'filler,internal,closeoff,algorithm:histogram,context:5,linematch:60'
