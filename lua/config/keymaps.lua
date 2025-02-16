@@ -19,6 +19,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 vim.keymap.set('n', '0', '^')
 
+-- when using * or # stay on searched word
+vim.keymap.set('n', '*', '<cmd>keepjumps normal! *N<CR>')
+vim.keymap.set('n', '#', '<cmd>keepjumps normal! #N<CR>')
+
 -- Write with Control-S
 vim.keymap.set({ 'i', 'v', 'c', 'n' }, '<C-s>', '<esc><cmd>w<cr>', { desc = 'Write file' })
 
