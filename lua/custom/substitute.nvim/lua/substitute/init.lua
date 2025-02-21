@@ -19,17 +19,17 @@ local function create_snippets()
       i(1),
       t [[/gIc]],
     }),
-    selection = {
+    selection = s('selection', {
       t [[:]],
       i(2, '%'),
-      t [[s/\<]],
+      t [[s/]],
       f(function()
         return vim.fn.getreg 'x'
       end),
-      t [[\>/]],
+      t [[/]],
       i(1),
       t [[/gIc]],
-    },
+    }),
   }
 
   return snippets
