@@ -35,7 +35,7 @@ local function create_snippets()
   return snippets
 end
 
-local function create_user_commands(snippets)
+local function create_snippet_commands(snippets)
   local commands = {
     normal = {
       command = [[normal! "xyiw]],
@@ -62,7 +62,7 @@ local function create_user_command_complete(commands)
   return complete
 end
 
-local function create_substitute_window()
+function M.create_substitute_window()
   local buffer = vim.api.nvim_create_buf(false, true)
   local window = vim.api.nvim_open_win(buffer, true, { split = 'below', height = 1 })
   local escape_key = vim.api.nvim_replace_termcodes('<esc>', true, false, true)
@@ -80,30 +80,10 @@ local function create_substitute_window()
   end, { buffer = true })
 end
 
-local function create_user_command()
-  local snippets = create_snippets()
-  local commands = create_user_commands(snippets)
-  local complete = create_user_command_complete(commands)
-
-  vim.api.nvim_create_user_command('Substitute', function(args)
-    if commands[args.args] == nil then
-      vim.notify('Error: invalid arg', vim.log.levels.ERROR)
-      return
-    end
-
-    vim.cmd(commands[args.args]['command'])
-    create_substitute_window()
-    require('luasnip').snip_expand(commands[args.args]['snippet'])
-  end, {
-    nargs = 1,
-    complete = function()
-      return complete
-    end,
-  })
-end
-
 function M.setup()
-  create_user_command()
+  M.snippets = create_snippets()
+  M.commands = create_snippet_commands(M.snippets)
+  M.complete = create_user_command_complete(M.commands)
 end
 
 return M
