@@ -67,19 +67,29 @@ local function create_substitute_window_keymaps(window)
   end, { buffer = true })
 end
 
----@return boolean
-local function validate()
+local function strip_trailing_newline()
   local yanked = vim.fn.getreg 'x'
 
-  if yanked:find '\n' then
-    return false
+  if yanked:sub(#yanked) == '\n' then
+    vim.fn.setreg('x', yanked:sub(0, #yanked - 1))
   end
-
-  return true
 end
 
 function M.open()
   local mode = vim.api.nvim_get_mode().mode
+
+  if mode == 'v' or mode == 'V' then
+    local visual_start = vim.fn.getpos 'v'
+    local visual_end = vim.fn.getpos '.'
+
+    if visual_start[2] ~= visual_end[2] then
+      -- row mismatch
+      vim.notify('Error: row mismatch', vim.log.levels.ERROR)
+      return
+    end
+
+    mode = 'v'
+  end
 
   if actions_by_mode[mode] == nil then
     vim.notify('Error: unsupported mode', vim.log.levels.ERROR)
@@ -87,11 +97,7 @@ function M.open()
   end
 
   vim.cmd(actions_by_mode[mode]['command'])
-
-  if not validate() then
-    vim.notify('Error: invalid selection', vim.log.levels.ERROR)
-    return
-  end
+  strip_trailing_newline()
 
   local substitute_window = create_substitute_window()
   create_substitute_window_keymaps(substitute_window)
