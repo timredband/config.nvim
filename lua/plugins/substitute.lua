@@ -6,7 +6,6 @@ return {
   dir = '~/.config/nvim/lua/custom/substitute.nvim',
   opts = {},
   keys = {
-    { '<leader>S', '<cmd>Substitute normal<cr>', mode = 'n', desc = 'Substitute normal' },
-    { '<leader>S', '<cmd>Substitute visual<cr>', mode = 'v', desc = 'Substitute visual' },
+    { '<leader>S', '<cmd>Substitute<cr>', mode = { 'n', 'v' }, desc = 'Substitute' },
   },
 }
