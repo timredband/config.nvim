@@ -42,7 +42,7 @@ local actions_by_mode = {
   },
 }
 
----@return {win_id: number, buf_id: number}
+---@return { buf_id: number, win_id: number }
 local function create_substitute_window()
   local buffer = vim.api.nvim_create_buf(false, true)
   local window = vim.api.nvim_open_win(buffer, true, { split = 'below', height = 1 })
@@ -50,7 +50,7 @@ local function create_substitute_window()
   return { buf_id = buffer, win_id = window }
 end
 
----@param window {win_id: number, buf_id: number}
+---@param window { buf_id: number, win_id: number }
 local function create_substitute_window_keymaps(window)
   local escape_key = vim.api.nvim_replace_termcodes('<esc>', true, false, true)
 
