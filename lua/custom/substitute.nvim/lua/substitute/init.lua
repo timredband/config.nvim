@@ -9,7 +9,9 @@ local f = ls.function_node
 local snippets = {
   word = s('word', {
     t [[:]],
-    i(2, '%'),
+    i(2, '0'),
+    t [[,]],
+    i(3, '$'),
     t [[s/\<]],
     f(function()
       return vim.fn.getreg 'x'
@@ -20,7 +22,9 @@ local snippets = {
   }),
   selection = s('selection', {
     t [[:]],
-    i(2, '%'),
+    i(2, '0'),
+    t [[,]],
+    i(3, '$'),
     t [[s/]],
     f(function()
       return vim.fn.getreg 'x'
@@ -64,6 +68,11 @@ local function create_substitute_window_keymaps(window)
   vim.keymap.set({ 'i', 'n' }, 'Q', function()
     vim.api.nvim_feedkeys(escape_key, 'i', false)
     vim.api.nvim_win_close(window.win_id, false)
+  end, { buffer = true })
+
+  vim.keymap.set({ 's' }, 'x', function()
+    vim.api.nvim_feedkeys(escape_key, 'i', false)
+    vim.api.nvim_feedkeys('xi', 'n', true)
   end, { buffer = true })
 end
 
