@@ -123,3 +123,6 @@ vim.keymap.set('n', '<leader>dt', function()
     signs = not vt,
   }
 end, { desc = '[D]iagnostic [T]oggle' })
+
+-- source current file
+vim.keymap.set('n', '<leader><leader>x', [[<cmd>source %<cr>]])
