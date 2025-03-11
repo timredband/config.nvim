@@ -80,7 +80,23 @@ vim.api.nvim_set_hl_ns(ns)
 
 local i = 0
 for path, results in pairs(results_by_path) do
+  local extension = string.match(path, '.*%.(.*)')
+  local icon, highlight_name = require('nvim-web-devicons').get_icon(path, extension, { default = true })
+
   vim.api.nvim_buf_set_lines(buffer, i, i + 1, false, { path })
+
+  vim.api.nvim_buf_set_extmark(buffer, ns, i, 0, {
+    virt_text_pos = 'inline',
+    virt_text = { { icon, highlight_name }, { ' ' } },
+    invalidate = true,
+  })
+
+  vim.api.nvim_buf_set_extmark(buffer, ns, i, 0, {
+    end_col = #path,
+    hl_group = 'Directory',
+    invalidate = true,
+  })
+
   i = i + 1
 
   for _, value in ipairs(results) do
@@ -90,21 +106,24 @@ for path, results in pairs(results_by_path) do
 
     vim.api.nvim_buf_set_extmark(buffer, ns, i, value.column - 1 + 2, {
       hl_group = 'old',
+      invalidate = true,
       virt_text = { { word, 'old' } },
       virt_text_pos = 'inline',
     })
 
     vim.api.nvim_buf_set_extmark(buffer, ns, i, value.column - 1 + 2, {
       virt_text = { { 'foooooooooo', 'new' } },
+      invalidate = true,
       virt_text_pos = 'inline',
     })
     i = i + 1
   end
 end
 
-vim.bo[buffer].modifiable = false
+-- vim.bo[buffer].modifiable = false
 
 local window = vim.api.nvim_open_win(buffer, true, { split = 'below', height = 10 })
+vim.wo.list = false
 
 -- -- vim.api.nvim_buf_set_extmark(0, ns, 1, 5, {
 -- --   end_col = 10,
