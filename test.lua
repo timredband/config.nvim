@@ -60,10 +60,17 @@ end
 
 handle:close()
 
+local sorted = {}
+for path in pairs(results_by_path) do
+  table.insert(sorted, path)
+end
+table.sort(sorted)
+
 -- print(vim.inspect(results_by_path))
 -- print(vim.inspect(truncated))
 
 local buffer = vim.api.nvim_create_buf(false, true)
+
 --
 --
 --
@@ -79,7 +86,10 @@ vim.api.nvim_set_hl(ns, 'new', { bg = 'darkgreen' })
 vim.api.nvim_set_hl_ns(ns)
 
 local i = 0
-for path, results in pairs(results_by_path) do
+
+for _, path in ipairs(sorted) do
+  local results = results_by_path[path]
+
   local extension = string.match(path, '.*%.(.*)')
   local icon, highlight_name = require('nvim-web-devicons').get_icon(path, extension, { default = true })
 
@@ -116,6 +126,7 @@ for path, results in pairs(results_by_path) do
       invalidate = true,
       virt_text_pos = 'inline',
     })
+
     i = i + 1
   end
 end
