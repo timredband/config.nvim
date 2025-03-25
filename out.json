@@ -1,0 +1,1993 @@
+[
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "foo.sh"
+        },
+        "lines": {
+          "text": "local\n"
+        },
+        "line_number": 1,
+        "absolute_offset": 0,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "foo.txt"
+        },
+        "lines": {
+          "text": "local local\n"
+        },
+        "line_number": 2,
+        "absolute_offset": 10,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "foo.txt"
+        },
+        "lines": {
+          "text": "            local  3 local\n"
+        },
+        "line_number": 5,
+        "absolute_offset": 24,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 12,
+            "end": 17
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 21,
+            "end": 26
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "foo.txt"
+        },
+        "lines": {
+          "text": "local = localFunction() { local }\n"
+        },
+        "line_number": 7,
+        "absolute_offset": 52,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 26,
+            "end": 31
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "init.lua"
+        },
+        "lines": {
+          "text": "local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'\n"
+        },
+        "line_number": 3,
+        "absolute_offset": 18,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "init.lua"
+        },
+        "lines": {
+          "text": "  local lazyrepo = 'https://github.com/folke/lazy.nvim.git'\n"
+        },
+        "line_number": 5,
+        "absolute_offset": 115,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/autocommands.lua"
+        },
+        "lines": {
+          "text": "    local cursor_pos = vim.api.nvim_win_get_cursor(0)\n"
+        },
+        "line_number": 34,
+        "absolute_offset": 1064,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/autocommands.lua"
+        },
+        "lines": {
+          "text": "    local num_rows = vim.api.nvim_buf_line_count(0)\n"
+        },
+        "line_number": 38,
+        "absolute_offset": 1189,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/keymaps.lua"
+        },
+        "lines": {
+          "text": "local function visual_keep_cursor(command)\n"
+        },
+        "line_number": 22,
+        "absolute_offset": 957,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/keymaps.lua"
+        },
+        "lines": {
+          "text": "  local command = [[normal \"_ciq]] .. vim.fn.getreg('0'):gsub('\\n', '')\n"
+        },
+        "line_number": 81,
+        "absolute_offset": 2796,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/keymaps.lua"
+        },
+        "lines": {
+          "text": "  local command = [[normal \"_ciq]] .. vim.fn.getreg('\"'):gsub('\\n', '')\n"
+        },
+        "line_number": 85,
+        "absolute_offset": 2937,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/keymaps.lua"
+        },
+        "lines": {
+          "text": "  local config = vim.diagnostic.config\n"
+        },
+        "line_number": 118,
+        "absolute_offset": 3883,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/config/keymaps.lua"
+        },
+        "lines": {
+          "text": "  local vt = config().virtual_text\n"
+        },
+        "line_number": 119,
+        "absolute_offset": 3922,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local M = {}\n"
+        },
+        "line_number": 1,
+        "absolute_offset": 0,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local ls = require 'luasnip'\n"
+        },
+        "line_number": 3,
+        "absolute_offset": 14,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local s = ls.snippet\n"
+        },
+        "line_number": 4,
+        "absolute_offset": 43,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local t = ls.text_node\n"
+        },
+        "line_number": 5,
+        "absolute_offset": 64,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local i = ls.insert_node\n"
+        },
+        "line_number": 6,
+        "absolute_offset": 87,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local f = ls.function_node\n"
+        },
+        "line_number": 7,
+        "absolute_offset": 112,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local snippets = {\n"
+        },
+        "line_number": 9,
+        "absolute_offset": 140,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local actions_by_mode = {\n"
+        },
+        "line_number": 38,
+        "absolute_offset": 564,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local function create_substitute_window()\n"
+        },
+        "line_number": 50,
+        "absolute_offset": 812,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "  local buffer = vim.api.nvim_create_buf(false, true)\n"
+        },
+        "line_number": 51,
+        "absolute_offset": 854,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "  local window = vim.api.nvim_open_win(buffer, true, { split = 'below', height = 1 })\n"
+        },
+        "line_number": 52,
+        "absolute_offset": 908,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local function create_substitute_window_keymaps(window)\n"
+        },
+        "line_number": 58,
+        "absolute_offset": 1098,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "  local escape_key = vim.api.nvim_replace_termcodes('<esc>', true, false, true)\n"
+        },
+        "line_number": 59,
+        "absolute_offset": 1154,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "local function strip_trailing_newline()\n"
+        },
+        "line_number": 79,
+        "absolute_offset": 1837,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "  local yanked = vim.fn.getreg 'x'\n"
+        },
+        "line_number": 80,
+        "absolute_offset": 1877,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "  local mode = vim.api.nvim_get_mode().mode\n"
+        },
+        "line_number": 88,
+        "absolute_offset": 2031,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "    local visual_start = vim.fn.getpos 'v'\n"
+        },
+        "line_number": 91,
+        "absolute_offset": 2113,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "    local visual_end = vim.fn.getpos '.'\n"
+        },
+        "line_number": 92,
+        "absolute_offset": 2156,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/custom/substitute.nvim/lua/substitute/init.lua"
+        },
+        "lines": {
+          "text": "  local substitute_window = create_substitute_window()\n"
+        },
+        "line_number": 111,
+        "absolute_offset": 2564,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/health.lua"
+        },
+        "lines": {
+          "text": "local check_version = function()\n"
+        },
+        "line_number": 8,
+        "absolute_offset": 140,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/health.lua"
+        },
+        "lines": {
+          "text": "  local verstr = tostring(vim.version())\n"
+        },
+        "line_number": 9,
+        "absolute_offset": 173,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/health.lua"
+        },
+        "lines": {
+          "text": "local check_external_reqs = function()\n"
+        },
+        "line_number": 21,
+        "absolute_offset": 616,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/health.lua"
+        },
+        "lines": {
+          "text": "    local is_executable = vim.fn.executable(exe) == 1\n"
+        },
+        "line_number": 24,
+        "absolute_offset": 755,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/health.lua"
+        },
+        "lines": {
+          "text": "    local uv = vim.uv or vim.loop\n"
+        },
+        "line_number": 45,
+        "absolute_offset": 1378,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/gitsigns.lua"
+        },
+        "lines": {
+          "text": "      local gitsigns = require 'gitsigns'\n"
+        },
+        "line_number": 20,
+        "absolute_offset": 661,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/harpoon.lua"
+        },
+        "lines": {
+          "text": "    local harpoon = require 'harpoon'\n"
+        },
+        "line_number": 6,
+        "absolute_offset": 126,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/lspconfig.lua"
+        },
+        "lines": {
+          "text": "        local map = function(keys, func, desc)\n"
+        },
+        "line_number": 53,
+        "absolute_offset": 2674,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 8,
+            "end": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/lspconfig.lua"
+        },
+        "lines": {
+          "text": "        local client = vim.lsp.get_client_by_id(event.data.client_id)\n"
+        },
+        "line_number": 99,
+        "absolute_offset": 5281,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 8,
+            "end": 13
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/lspconfig.lua"
+        },
+        "lines": {
+          "text": "    local capabilities = vim.lsp.protocol.make_client_capabilities()\n"
+        },
+        "line_number": 132,
+        "absolute_offset": 6923,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/lspconfig.lua"
+        },
+        "lines": {
+          "text": "    local servers = {\n"
+        },
+        "line_number": 145,
+        "absolute_offset": 7859,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/lspconfig.lua"
+        },
+        "lines": {
+          "text": "    local ensure_installed = vim.tbl_keys(servers or {})\n"
+        },
+        "line_number": 220,
+        "absolute_offset": 10361,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/lspconfig.lua"
+        },
+        "lines": {
+          "text": "          local server = servers[server_name] or {}\n"
+        },
+        "line_number": 244,
+        "absolute_offset": 10888,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 10,
+            "end": 15
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "    local statusline = require 'mini.statusline'\n"
+        },
+        "line_number": 22,
+        "absolute_offset": 778,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "    local show_dotfiles = true\n"
+        },
+        "line_number": 47,
+        "absolute_offset": 1584,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "    local filter_show = function()\n"
+        },
+        "line_number": 49,
+        "absolute_offset": 1616,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "    local filter_hide = function(fs_entry)\n"
+        },
+        "line_number": 53,
+        "absolute_offset": 1678,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "    local toggle_dotfiles = function()\n"
+        },
+        "line_number": 57,
+        "absolute_offset": 1782,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "      local new_filter = show_dotfiles and filter_show or filter_hide\n"
+        },
+        "line_number": 59,
+        "absolute_offset": 1861,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/mini.lua"
+        },
+        "lines": {
+          "text": "        local buf_id = args.data.buf_id\n"
+        },
+        "line_number": 67,
+        "absolute_offset": 2210,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 8,
+            "end": 13
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "    local cmp = require 'cmp'\n"
+        },
+        "line_number": 30,
+        "absolute_offset": 935,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "    local luasnip = require 'luasnip'\n"
+        },
+        "line_number": 31,
+        "absolute_offset": 965,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "            local win = vim.api.nvim_get_current_win()\n"
+        },
+        "line_number": 74,
+        "absolute_offset": 2625,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 12,
+            "end": 17
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "            local pos = vim.api.nvim_win_get_cursor(win)\n"
+        },
+        "line_number": 75,
+        "absolute_offset": 2680,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 12,
+            "end": 17
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "            local current_line = vim.api.nvim_get_current_line()\n"
+        },
+        "line_number": 77,
+        "absolute_offset": 2738,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 12,
+            "end": 17
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "            local win = vim.api.nvim_get_current_win()\n"
+        },
+        "line_number": 89,
+        "absolute_offset": 3126,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 12,
+            "end": 17
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/nvim-cmp.lua"
+        },
+        "lines": {
+          "text": "            local pos = vim.api.nvim_win_get_cursor(win)\n"
+        },
+        "line_number": 90,
+        "absolute_offset": 3181,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 12,
+            "end": 17
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "lua/plugins/telescope.lua"
+        },
+        "lines": {
+          "text": "    local builtin = require 'telescope.builtin'\n"
+        },
+        "line_number": 33,
+        "absolute_offset": 996,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    }
+  ],
+  [
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local getLocation = function(line)\n"
+        },
+        "line_number": 7,
+        "absolute_offset": 108,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- local handle = io.popen 'rg --no-config --fixed-strings --ignore-case --vimgrep local'\n"
+        },
+        "line_number": 19,
+        "absolute_offset": 440,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 3,
+            "end": 8
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 83,
+            "end": 88
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local result = vim.system({ 'rg', '-w', '--no-config', '--fixed-strings', '--ignore-case', '--vimgrep', 'local' }, { text = true }):wait()\n"
+        },
+        "line_number": 20,
+        "absolute_offset": 530,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 105,
+            "end": 110
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- rg -w --no-config --fixed-strings --ignore-case --vimgrep local --replace foo\n"
+        },
+        "line_number": 21,
+        "absolute_offset": 669,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 61,
+            "end": 66
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local out = result.code == 0 and result.stdout or result.stderr\n"
+        },
+        "line_number": 22,
+        "absolute_offset": 750,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local text = vim.split(vim.trim(out or ''), '\\n')\n"
+        },
+        "line_number": 23,
+        "absolute_offset": 814,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local word = 'local'\n"
+        },
+        "line_number": 25,
+        "absolute_offset": 865,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 14,
+            "end": 19
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local truncated = {}\n"
+        },
+        "line_number": 27,
+        "absolute_offset": 887,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local results_by_path = {}\n"
+        },
+        "line_number": 28,
+        "absolute_offset": 908,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "  local filename, lineNumber, column, raw = getLocation(line)\n"
+        },
+        "line_number": 31,
+        "absolute_offset": 967,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "  local result = {\n"
+        },
+        "line_number": 34,
+        "absolute_offset": 1054,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local sorted = {}\n"
+        },
+        "line_number": 62,
+        "absolute_offset": 1700,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local buffer = vim.api.nvim_create_buf(false, true)\n"
+        },
+        "line_number": 71,
+        "absolute_offset": 1882,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local ns = vim.api.nvim_create_namespace 'my_namespace'\n"
+        },
+        "line_number": 82,
+        "absolute_offset": 2055,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local i = 0\n"
+        },
+        "line_number": 87,
+        "absolute_offset": 2265,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "  local results = results_by_path[path]\n"
+        },
+        "line_number": 90,
+        "absolute_offset": 2311,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "  local extension = string.match(path, '.*%.(.*)')\n"
+        },
+        "line_number": 92,
+        "absolute_offset": 2352,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "  local icon, highlight_name = require('nvim-web-devicons').get_icon(path, extension, { default = true })\n"
+        },
+        "line_number": 93,
+        "absolute_offset": 2403,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 2,
+            "end": 7
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "    local lines = {}\n"
+        },
+        "line_number": 112,
+        "absolute_offset": 2919,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 4,
+            "end": 9
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "local window = vim.api.nvim_open_win(buffer, true, { split = 'below', height = 10 })\n"
+        },
+        "line_number": 135,
+        "absolute_offset": 3575,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 0,
+            "end": 5
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- -- local t = {} -- table to store the indices\n"
+        },
+        "line_number": 149,
+        "absolute_offset": 3969,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- -- local i = 0\n"
+        },
+        "line_number": 151,
+        "absolute_offset": 4047,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- --   i = string.find(l, 'local', i + 1) -- find 'next' newline\n"
+        },
+        "line_number": 153,
+        "absolute_offset": 4085,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 28,
+            "end": 33
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- -- for match in string.gmatch(l, 'local') do\n"
+        },
+        "line_number": 159,
+        "absolute_offset": 4241,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 37,
+            "end": 42
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- -- local re = vim.regex 'local'\n"
+        },
+        "line_number": 164,
+        "absolute_offset": 4329,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          },
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 28,
+            "end": 33
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- -- local m = re:match_line(buffer, 2)\n"
+        },
+        "line_number": 165,
+        "absolute_offset": 4364,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 6,
+            "end": 11
+          }
+        ]
+      }
+    },
+    {
+      "type": "match",
+      "data": {
+        "path": {
+          "text": "test.lua"
+        },
+        "lines": {
+          "text": "-- -- re:match_str 'local'\n"
+        },
+        "line_number": 166,
+        "absolute_offset": 4405,
+        "submatches": [
+          {
+            "match": {
+              "text": "local"
+            },
+            "start": 20,
+            "end": 25
+          }
+        ]
+      }
+    }
+  ]
+]

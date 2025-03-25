@@ -183,7 +183,7 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
-      marksman = {},
+      -- marksman = {},
       -- omnisharp = {},
       pyright = {},
       terraformls = {},

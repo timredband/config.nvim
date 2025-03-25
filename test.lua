@@ -6,7 +6,7 @@
 ---@return unknown
 local getLocation = function(line)
   for filename, lineNumber, columnNumber, raw in string.gmatch(line, '([^:]+):(%d+):(%d+):(.*)') do
-    return filename, lineNumber, columnNumber, raw
+    return filename, tonumber(lineNumber), tonumber(columnNumber), raw
   end
 end
 
@@ -16,24 +16,27 @@ end
 ---@field raw integer
 ---@field column integer
 
-local handle = io.popen 'rg -i --vimgrep local'
-local word = 'local'
+-- rg -w --no-config --fixed-strings --ignore-case --column -o --json local --replace foo   | jq -s '[.[] | select(.type == "match") | {"path": .data.path.text,"text": .data.lines.text, "line_number": .data.line_number, "submatches": .data.submatches.[] | {"start": .start,"end":.end}}]'
+-- rg -w --no-config --fixed-strings --ignore-case --column -o --json local --replace foo   | jq -s '[.[] | select(.type == "match") | {"path": .data.path.text,"text": .data.lines.text, "line_number": .data.line_number, "submatches": .data.submatches.[] | {"start": .start,"end":.end}}]| reduce .[] as $foo  ({}; .[$foo.path]+=[{"text": $foo.text, "line_number": $foo.line_number, "submatches": $foo.submatches}])'
+-- local handle = io.popen 'rg --no-config --fixed-strings --ignore-case --vimgrep local'
+local result = vim.system({ 'rg', '-w', '--no-config', '--fixed-strings', '--ignore-case', '--vimgrep', 'local' }, { text = true }):wait()
+-- rg -w --no-config --fixed-strings --ignore-case --vimgrep local --replace foo
+local out = result.code == 0 and result.stdout or result.stderr
+local text = vim.split(vim.trim(out or ''), '\n')
 
-if handle == nil then
-  os.exit(false)
-end
+local word = 'local'
 
 local truncated = {}
 local results_by_path = {}
 
-for line in handle:lines() do
+for i, line in ipairs(text) do
   local filename, lineNumber, column, raw = getLocation(line)
 
   ---@type SearchResult
   local result = {
-    line = lineNumber + 0,
+    line = lineNumber,
     path = filename,
-    column = column + 0,
+    column = column,
     raw = raw,
   }
 
@@ -57,8 +60,6 @@ for _, value in pairs(results_by_path) do
     return a.line - b.line < 0
   end)
 end
-
-handle:close()
 
 local sorted = {}
 for path in pairs(results_by_path) do
