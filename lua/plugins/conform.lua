@@ -26,7 +26,7 @@ return { -- Autoformat
 
       -- Conform can also run multiple formatters sequentially
       -- python = { 'autopep8' },
-      python = { 'black' },
+      python = { 'isort', 'black' },
       sh = { 'shfmt' },
       --
       -- You can use a sub-list to tell conform to run *until* a formatter

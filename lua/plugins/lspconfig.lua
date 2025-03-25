@@ -224,6 +224,7 @@ return { -- LSP Configuration & Plugins
       'dockerls',
       'eslint',
       'gopls',
+      'isort',
       'jsonls',
       'lua_ls',
       'marksman',
