@@ -70,3 +70,5 @@ vim.opt.wrap = false
 vim.opt.grepprg = 'rg -i --vimgrep'
 
 -- vim.opt.diffopt = 'filler,internal,closeoff,algorithm:histogram,context:5,linematch:60'
+
+vim.diagnostic.config { virtual_text = true }
