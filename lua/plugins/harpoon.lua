@@ -25,5 +25,17 @@ return {
     vim.keymap.set('n', '<C-l>', function()
       harpoon:list():select(4)
     end, { desc = 'Harpoon: 4' })
+    vim.keymap.set('n', '<M-h>', function()
+      harpoon:list():select(5)
+    end, { desc = 'Harpoon: 5' })
+    vim.keymap.set('n', '<M-j>', function()
+      harpoon:list():select(6)
+    end, { desc = 'Harpoon: 6' })
+    vim.keymap.set('n', '<M-k>', function()
+      harpoon:list():select(7)
+    end, { desc = 'Harpoon: 7' })
+    vim.keymap.set('n', '<M-l>', function()
+      harpoon:list():select(8)
+    end, { desc = 'Harpoon: 8' })
   end,
 }
