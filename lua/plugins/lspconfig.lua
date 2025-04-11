@@ -179,7 +179,7 @@ return { -- LSP Configuration & Plugins
       -- omnisharp = {},
       pyright = {},
       terraformls = {},
-      tsserver = {
+      ts_ls = {
         on_init = function(client)
           client.server_capabilities.documentFormattingProvider = false
         end,
@@ -225,13 +225,15 @@ return { -- LSP Configuration & Plugins
       'shfmt',
       'stylua',
       'terraformls',
-      'tsserver',
+      'ts_ls',
       'yamlls',
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
     require('mason-lspconfig').setup {
+      ensure_installed = {},
+      automatic_installation = false,
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
