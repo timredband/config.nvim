@@ -140,6 +140,7 @@ return { -- LSP Configuration & Plugins
       marksman = {},
       -- omnisharp = {},
       pyright = {},
+      rust_analyzer = {},
       terraformls = {},
       ts_ls = {
         on_init = function(client)
@@ -184,6 +185,7 @@ return { -- LSP Configuration & Plugins
       'marksman',
       'prettier',
       'pyright',
+      'rust_analyzer',
       'shfmt',
       'stylua',
       'terraformls',
