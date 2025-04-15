@@ -205,7 +205,13 @@ return { -- LSP Configuration & Plugins
           -- by the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off formatting for tsserver)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-          require('lspconfig')[server_name].setup(server)
+
+          if server_name == 'eslint' then
+            require('lspconfig')[server_name].setup(server)
+          else
+            vim.lsp.config(server_name, server)
+            vim.lsp.enable(server_name)
+          end
         end,
       },
     }
