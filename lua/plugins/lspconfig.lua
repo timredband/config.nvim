@@ -20,6 +20,7 @@ return { -- LSP Configuration & Plugins
         --  This is where a variable was first declared, or where a function is defined, etc.
         --  To jump back, press <C-T>.
         map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+        map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
         -- Find references for the word under your cursor.
         map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
