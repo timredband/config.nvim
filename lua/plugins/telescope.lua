@@ -16,7 +16,7 @@ return {
         preview = {
           filesize_limit = 0.1, -- MB
         },
-        file_ignore_patterns = { '^./.git/', '^node_modules/', '^vendor/', '**/vendor/', 'package%-lock.json' },
+        file_ignore_patterns = { '^./.git/', '^node_modules/', '^vendor/', '**/vendor/', 'package%-lock.json', '^target/' },
       },
       -- pickers = {}
       extensions = {
