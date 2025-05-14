@@ -142,6 +142,9 @@ return { -- LSP Configuration & Plugins
       -- omnisharp = {},
       pyright = {},
       rust_analyzer = {},
+      taplo = {
+        root_markers = { '.taplo.toml' },
+      },
       terraformls = {},
       ts_ls = {
         on_init = function(client)
@@ -189,6 +192,7 @@ return { -- LSP Configuration & Plugins
       'rust_analyzer',
       'shfmt',
       'stylua',
+      'taplo',
       'terraformls',
       'ts_ls',
       'yamlls',
