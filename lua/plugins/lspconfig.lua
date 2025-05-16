@@ -110,7 +110,18 @@ return { -- LSP Configuration & Plugins
         },
       },
       gopls = {},
-      jsonls = {},
+      jsonls = {
+        settings = {
+          json = {
+            schemas = {
+              {
+                fileMatch = { 'tsconfig.json' },
+                url = 'https://raw.githubusercontent.com/SchemaStore/schemastore/refs/heads/master/src/schemas/json/tsconfig.json',
+              },
+            },
+          },
+        },
+      },
       lua_ls = {
         settings = {
           Lua = {
