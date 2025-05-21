@@ -3,6 +3,10 @@ return {
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {
+    keymaps = {
+      ['<C-s>'] = {},
+      ['Q'] = { 'actions.close', mode = 'n' },
+    },
     view_options = {
       show_hidden = true,
       is_always_hidden = function(name, bufnr)
