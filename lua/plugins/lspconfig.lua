@@ -183,7 +183,12 @@ return { -- LSP Configuration & Plugins
     --    :Mason
     --
     --  You can press `g?` for help in this menu
-    require('mason').setup()
+    require('mason').setup {
+      registries = {
+        'github:mason-org/mason-registry',
+        'github:Crashdummyy/mason-registry', -- https://github.com/seblyng/roslyn.nvim
+      },
+    }
 
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
