@@ -101,6 +101,7 @@ return { -- LSP Configuration & Plugins
       bashls = {
         filetypes = { 'sh', 'bats', 'bash' },
       },
+      biome = {},
       eslint = {
         on_init = function(client)
           client.config.settings.workingDirectory = { directory = client.config.root_dir }
@@ -155,6 +156,11 @@ return { -- LSP Configuration & Plugins
       rust_analyzer = {},
       taplo = {
         root_markers = { '.taplo.toml' },
+      },
+      superhtml = {
+        on_init = function(client)
+          client.server_capabilities.documentFormattingProvider = false
+        end,
       },
       terraformls = {},
       ts_ls = {
@@ -226,6 +232,10 @@ return { -- LSP Configuration & Plugins
           -- by the server configuration above. Useful when disabling
           -- certain features of an LSP (for example, turning off formatting for tsserver)
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+
+          if server_name == 'biome' then
+            return
+          end
 
           if server_name == 'eslint' then
             require('lspconfig')[server_name].setup(server)

@@ -19,6 +19,8 @@ return { -- Autoformat
     },
     formatters_by_ft = {
       bash = { 'shfmt' },
+      css = { 'biome' },
+      html = { 'biome' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
 
