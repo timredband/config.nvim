@@ -17,7 +17,7 @@ return { -- Highlight, edit, and navigate code
       ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'yaml', 'vim', 'vimdoc' },
       auto_install = true,
       highlight = { enable = true },
-      indent = { enable = true },
+      indent = { enable = true, disable = { 'yaml' } },
       textobjects = {
         select = {
           enable = true,
