@@ -8,6 +8,7 @@ return {
       ['<C-l>'] = { 'actions.select', mode = 'n' },
       ['<C-s>'] = {},
       ['Q'] = { 'actions.close', mode = 'n' },
+      ['q'] = { '', mode = 'n' },
     },
     view_options = {
       show_hidden = true,
