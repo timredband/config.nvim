@@ -21,6 +21,7 @@ return { -- Autoformat
       bash = { 'shfmt' },
       css = { 'biome' },
       html = { 'biome' },
+      javascript = { 'biome' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
 
