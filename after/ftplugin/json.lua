@@ -4,5 +4,3 @@ if vim.fn.expand '%:t' == 'package.json' then
     vim.ui.open('https://www.npmjs.com/package/' .. vim.fn.getreg 'y')
   end, { buffer = true })
 end
-
-vim.cmd [[TSContextEnable]]
