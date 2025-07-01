@@ -69,6 +69,12 @@ return { -- LSP Configuration & Plugins
             command = 'EslintFixAll',
           })
         end
+
+        if client and client.name == 'roslyn' then
+          map('gR', function()
+            vim.cmd [[LspRestart roslyn]]
+          end, 'Lsp Restart Roslyn')
+        end
       end,
     })
 
