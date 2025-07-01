@@ -6,7 +6,6 @@ return { -- LSP Configuration & Plugins
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     'hrsh7th/cmp-nvim-lsp',
     { 'j-hui/fidget.nvim', opts = {} },
-    { 'Hoffs/omnisharp-extended-lsp.nvim', opts = {}, config = function() end },
   },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
@@ -69,13 +68,6 @@ return { -- LSP Configuration & Plugins
             buffer = event.buf,
             command = 'EslintFixAll',
           })
-        end
-
-        if client and client.name == 'omnisharp' then
-          map('grd', require('omnisharp_extended').telescope_lsp_definition, 'Omnisharp: [G]oto [D]efinition')
-          map('grr', require('omnisharp_extended').telescope_lsp_references, 'Omnisharp: [G]oto [R]eferences')
-          map('gri', require('omnisharp_extended').telescope_lsp_implementation, 'Omnisharp: [G]oto [I]mplementation')
-          map('grt', require('omnisharp_extended').telescope_lsp_type_definition, 'Omnisharp: Type [D]efinition')
         end
       end,
     })
@@ -151,7 +143,6 @@ return { -- LSP Configuration & Plugins
         },
       },
       marksman = {},
-      -- omnisharp = {},
       pyright = {},
       rust_analyzer = {},
       taplo = {
