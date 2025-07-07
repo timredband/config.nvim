@@ -73,7 +73,7 @@ return { -- LSP Configuration & Plugins
         if client and client.name == 'roslyn' then
           map('gR', function()
             vim.cmd [[LspRestart roslyn]]
-          end, 'Lsp Restart Roslyn')
+          end, 'Restart Roslyn')
         end
       end,
     })
