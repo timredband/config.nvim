@@ -72,6 +72,8 @@ return { -- LSP Configuration & Plugins
 
         if client and client.name == 'roslyn' then
           map('gR', function()
+            local build = require 'plugins.lsp.roslyn'
+            build()
             vim.cmd [[LspRestart roslyn]]
           end, 'Restart Roslyn')
         end
