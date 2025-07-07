@@ -1,6 +1,8 @@
 local window = -1
 
 local build = function()
+  print 'Building solution'
+
   if window ~= -1 then
     vim.api.nvim_win_close(window, true)
     window = -1
@@ -22,7 +24,7 @@ local build = function()
   end
 
   handle = vim.uv.spawn('bash', {
-    args = { '-c', 'until fd -q sln; do cd ../; done; dotnet build;' },
+    args = { '-c', 'cd ' .. vim.fn.expand '%:h' .. '; pwd; until fd -q sln; do cd ../; done; dotnet build;' },
     stdio = { stdin, stdout, stderr },
   }, function(code, signal)
     print('Process exited with code:', code)
