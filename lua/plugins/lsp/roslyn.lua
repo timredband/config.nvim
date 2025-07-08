@@ -16,11 +16,50 @@ local build = function()
   local stdout_data = ''
 
   local function set_buffer_text(data)
+    local row = 0
     local lines = {}
+    local positions = {}
+
     for line in data:gmatch '([^\n]*)\n?' do
       table.insert(lines, line)
+
+      local start = 1
+      while true do
+        local s, e = string.find(line, ': error', start, true)
+        if not s then
+          break
+        end
+        table.insert(positions, { row = row, start = s, stop = e, group = 'error' })
+        start = e + 1
+      end
+
+      start = 1
+      while true do
+        local s, e = string.find(line, ': warning', start, true)
+        if not s then
+          break
+        end
+        table.insert(positions, { row = row, start = s - 1, stop = e, group = 'warning' })
+        start = e + 1
+      end
+
+      row = row + 1
     end
+
     vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+
+    local ns = vim.api.nvim_create_namespace 'dotnet_build_colors'
+    vim.api.nvim_set_hl(ns, 'error', { fg = 'red' })
+    vim.api.nvim_set_hl(ns, 'warning', { fg = 'yellow' })
+    vim.api.nvim_set_hl_ns(ns)
+
+    for _, value in ipairs(positions) do
+      vim.api.nvim_buf_set_extmark(0, ns, value.row, value.start, {
+        end_col = value.stop,
+        hl_group = value.group,
+        invalidate = true,
+      })
+    end
   end
 
   handle = vim.uv.spawn('bash', {
