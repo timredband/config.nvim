@@ -39,7 +39,7 @@ local build = function()
         if not s then
           break
         end
-        table.insert(positions, { row = row, start = s - 1, stop = e, group = 'warning' })
+        table.insert(positions, { row = row, start = s, stop = e, group = 'warning' })
         start = e + 1
       end
 
