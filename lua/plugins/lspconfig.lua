@@ -151,6 +151,7 @@ return { -- LSP Configuration & Plugins
         },
       },
       marksman = {},
+      pgformatter = {},
       pyright = {},
       rust_analyzer = {},
       taplo = {

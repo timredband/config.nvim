@@ -32,10 +32,18 @@ return { -- Autoformat
       python = { 'isort', 'black' },
       scss = { 'prettier' },
       sh = { 'shfmt' },
+      sql = { 'pg_format' },
       --
       -- You can use a sub-list to tell conform to run *until* a formatter
       -- is found.
       -- javascript = { { "prettierd", "prettier" } },
+    },
+    formatters = {
+      pg_format = {
+        prepend_args = function()
+          return { '--comma-start', '--comma-break' }
+        end,
+      },
     },
   },
 }
