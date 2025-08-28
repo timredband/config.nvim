@@ -30,12 +30,12 @@ return {
     vim.keymap.set('n', '<leader><leader>b', dap.toggle_breakpoint)
     vim.keymap.set('n', '<leader><leader>gb', dap.run_to_cursor)
 
-    vim.keymap.set('n', '<F1>', dap.continue)
-    vim.keymap.set('n', '<F2>', dap.step_into)
-    vim.keymap.set('n', '<F3>', dap.step_over)
-    vim.keymap.set('n', '<F4>', dap.step_out)
-    vim.keymap.set('n', '<F5>', dap.step_back)
-    vim.keymap.set('n', '<F6>', dap.restart)
+    vim.keymap.set('n', '<F1>', dap.continue, { desc = 'Continue' })
+    vim.keymap.set('n', '<F2>', dap.step_into, { desc = 'Step into' })
+    vim.keymap.set('n', '<F3>', dap.step_over, { desc = 'Step over' })
+    vim.keymap.set('n', '<F4>', dap.step_out, { desc = 'Step out' })
+    vim.keymap.set('n', '<F5>', dap.step_back, { desc = 'Step back' })
+    vim.keymap.set('n', '<F6>', dap.restart, { desc = 'Restart' })
 
     dap.listeners.before.attach.dapui_config = function()
       ui.open()
