@@ -66,7 +66,7 @@ return { -- LSP Configuration & Plugins
         if client and client.name == 'eslint' then
           vim.api.nvim_create_autocmd('BufWritePre', {
             buffer = event.buf,
-            command = 'EslintFixAll',
+            command = 'LspEslintFixAll',
           })
         end
 
@@ -234,15 +234,12 @@ return { -- LSP Configuration & Plugins
           server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
 
           if server_name == 'biome' then
+            -- just want biome as a formatter for js, html, css for now
             return
           end
 
-          if server_name == 'eslint' then
-            require('lspconfig')[server_name].setup(server)
-          else
-            vim.lsp.config(server_name, server)
-            vim.lsp.enable(server_name)
-          end
+          vim.lsp.config(server_name, server)
+          vim.lsp.enable(server_name)
         end,
       },
     }
