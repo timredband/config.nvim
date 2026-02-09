@@ -103,14 +103,7 @@ return { -- LSP Configuration & Plugins
       },
       biome = {},
       cssls = {},
-      eslint = {
-        on_init = function(client)
-          client.config.settings.workingDirectory = { directory = client.config.root_dir }
-        end,
-        settings = {
-          -- workingDirectories = { mode = 'auto' }, -- should work but isn't doing anything
-        },
-      },
+      eslint = {},
       gopls = {},
       jsonls = {
         settings = {
@@ -163,9 +156,7 @@ return { -- LSP Configuration & Plugins
           },
         },
       },
-      taplo = {
-        root_markers = { '.taplo.toml' },
-      },
+      taplo = {},
       superhtml = {
         on_init = function(client)
           client.server_capabilities.documentFormattingProvider = false
