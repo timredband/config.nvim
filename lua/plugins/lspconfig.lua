@@ -102,6 +102,7 @@ return { -- LSP Configuration & Plugins
         filetypes = { 'sh', 'bats', 'bash' },
       },
       biome = {},
+      cssls = {},
       eslint = {
         on_init = function(client)
           client.config.settings.workingDirectory = { directory = client.config.root_dir }
@@ -153,7 +154,15 @@ return { -- LSP Configuration & Plugins
       marksman = {},
       pgformatter = {},
       pyright = {},
-      rust_analyzer = {},
+      rust_analyzer = {
+        settings = {
+          ['rust-analyzer'] = {
+            check = {
+              command = 'clippy',
+            },
+          },
+        },
+      },
       taplo = {
         root_markers = { '.taplo.toml' },
       },
@@ -221,6 +230,11 @@ return { -- LSP Configuration & Plugins
     })
 
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+    for name, server in pairs(servers) do
+      server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+      vim.lsp.config(name, server)
+    end
 
     require('mason-lspconfig').setup {
       ensure_installed = {},

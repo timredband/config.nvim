@@ -16,3 +16,6 @@ require('lazy').setup {
     notify = false,
   },
 }
+
+-- :syntax match NonASCII "[^\x00-\x7F]"
+-- :highlight NonASCII ctermbg=red guibg=red
