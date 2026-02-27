@@ -16,7 +16,21 @@ return { -- Highlight, edit, and navigate code
     require('nvim-treesitter.configs').setup {
       ensure_installed = { 'bash', 'c', 'html', 'lua', 'luadoc', 'markdown', 'yaml', 'vim', 'vimdoc' },
       auto_install = true,
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        disable = function(_, bufnr)
+          local max_filesize = 1024 * 1024
+          local filename = vim.api.nvim_buf_get_name(bufnr)
+
+          local ok, stats = pcall(vim.loop.fs_stat, filename)
+
+          if ok and stats and stats.size > max_filesize then
+            return true
+          end
+
+          return false
+        end,
+      },
       indent = { enable = true, disable = { 'yaml' } },
       textobjects = {
         select = {
