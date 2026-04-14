@@ -20,6 +20,7 @@ return { -- Autoformat
     formatters_by_ft = {
       bash = { 'shfmt' },
       css = { 'biome' },
+      dockerfile = { 'dockerfmt' },
       html = { 'biome' },
       javascript = { 'biome' },
       lua = { 'stylua' },
@@ -41,7 +42,7 @@ return { -- Autoformat
     formatters = {
       pg_format = {
         prepend_args = function()
-          return { '--comma-start', '--comma-break' }
+          return { '--comma-start' }
         end,
       },
     },
