@@ -23,10 +23,11 @@ return { -- Autoformat
       dockerfile = { 'dockerfmt' },
       html = { 'biome' },
       javascript = { 'biome' },
+      -- json = { 'jq' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
 
-      -- yaml = { 'prettier' },
+      yaml = { 'yq' },
 
       -- Conform can also run multiple formatters sequentially
       -- python = { 'autopep8' },
@@ -43,6 +44,11 @@ return { -- Autoformat
       pg_format = {
         prepend_args = function()
           return { '--comma-start' }
+        end,
+      },
+      yq = {
+        prepend_args = function()
+          return { 'sort_keys(..) | (.. | select(type == "!!seq")) |= sort' }
         end,
       },
     },

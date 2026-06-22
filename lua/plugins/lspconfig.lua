@@ -113,6 +113,10 @@ return { -- LSP Configuration & Plugins
                 fileMatch = { 'tsconfig.json' },
                 url = 'https://raw.githubusercontent.com/SchemaStore/schemastore/refs/heads/master/src/schemas/json/tsconfig.json',
               },
+              {
+                fileMatch = { 'config.json' },
+                url = 'file://home/tim/dev/carbon-config/main/schemas/config.json',
+              },
             },
           },
         },
@@ -175,8 +179,11 @@ return { -- LSP Configuration & Plugins
         filetypes = { 'yml', 'yaml' },
         settings = {
           yaml = {
+            format = { enable = false },
             schemas = {
               ['https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json'] = '*_test.yaml',
+              -- ['https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json'] = '*app_*',
+              ['https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/applicationset_v1alpha1.json'] = '*appset_*',
             },
           },
         },
