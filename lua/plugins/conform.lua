@@ -27,11 +27,12 @@ return { -- Autoformat
       lua = { 'stylua' },
       markdown = { 'prettier' },
 
-      yaml = { 'yq' },
+      -- yaml = { 'yq' },
 
       -- Conform can also run multiple formatters sequentially
       -- python = { 'autopep8' },
       python = { 'isort', 'black' },
+      -- python = { 'ruff' },
       scss = { 'prettier' },
       sh = { 'shfmt' },
       sql = { 'pg_format' },
@@ -46,11 +47,12 @@ return { -- Autoformat
           return { '--comma-start' }
         end,
       },
-      yq = {
-        prepend_args = function()
-          return { 'sort_keys(..) | (.. | select(type == "!!seq")) |= sort' }
-        end,
-      },
+      -- yq = {
+      --   prepend_args = function()
+      --     return { 'sort_keys(..) | (.. | select(type == "!!seq")) |= sort', '-P', '-' }
+      --   end,
+      --   format_on_save = false,
+      -- },
     },
   },
 }

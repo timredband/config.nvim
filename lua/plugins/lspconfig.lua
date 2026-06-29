@@ -179,7 +179,7 @@ return { -- LSP Configuration & Plugins
         filetypes = { 'yml', 'yaml' },
         settings = {
           yaml = {
-            format = { enable = false },
+            format = { enable = true },
             schemas = {
               ['https://raw.githubusercontent.com/helm-unittest/helm-unittest/main/schema/helm-testsuite.json'] = '*_test.yaml',
               -- ['https://raw.githubusercontent.com/datreeio/CRDs-catalog/main/argoproj.io/application_v1alpha1.json'] = '*app_*',
