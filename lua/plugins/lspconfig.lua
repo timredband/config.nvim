@@ -150,7 +150,23 @@ return { -- LSP Configuration & Plugins
       },
       marksman = {},
       pgformatter = {},
-      pyright = {},
+      pyright = {
+        settings = {
+          pyright = {
+            disableOrganizeImports = true,
+          },
+        },
+        python = {
+          analysis = {
+            ignore = { '*' },
+          },
+        },
+      },
+      ruff = {
+        -- on_init = function(client)
+        --   client.server_capabilities.hoverProvider = false
+        -- end,
+      },
       rust_analyzer = {
         settings = {
           ['rust-analyzer'] = {
@@ -218,6 +234,7 @@ return { -- LSP Configuration & Plugins
       'marksman',
       'prettier',
       'pyright',
+      'ruff',
       'rust_analyzer',
       'shfmt',
       'stylua',
