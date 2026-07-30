@@ -26,13 +26,12 @@ return { -- Autoformat
       -- json = { 'jq' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
-
       -- yaml = { 'yq' },
-
-      -- Conform can also run multiple formatters sequentially
-      -- python = { 'autopep8' },
-      python = { 'isort', 'black' },
-      -- python = { 'ruff' },
+      python = {
+        'ruff_fix',
+        'ruff_format',
+        'ruff_organize_imports',
+      },
       scss = { 'prettier' },
       sh = { 'shfmt' },
       sql = { 'pg_format' },
