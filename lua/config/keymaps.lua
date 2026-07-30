@@ -17,8 +17,6 @@ vim.keymap.set('n', '<leader>l', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '0', '^')
-
 local function visual_keep_cursor(command)
   vim.cmd [[normal! "vy]]
   vim.cmd(command .. [[\V]] .. vim.fn.getreg 'v')
