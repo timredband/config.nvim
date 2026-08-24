@@ -124,4 +124,7 @@ vim.keymap.set('n', '<leader><leader>x', [[<cmd>source %<cr>]])
 
 vim.keymap.set('n', '<M-j>', [[<cmd>m .+1<cr>]])
 vim.keymap.set('n', '<M-k>', [[<cmd>m .-2<cr>]])
+vim.keymap.set('v', '<M-k>', [[:m '<-2<cr>gv=gv]])
+vim.keymap.set('v', '<M-j>', [[:m '>+1<cr>gv=gv]])
+
 
