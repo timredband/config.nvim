@@ -22,7 +22,7 @@ return { -- Autoformat
       css = { 'biome' },
       dockerfile = { 'dockerfmt' },
       html = { 'biome' },
-      javascript = { 'biome' },
+      -- javascript = { 'biome' },
       -- json = { 'jq' },
       lua = { 'stylua' },
       markdown = { 'prettier' },
