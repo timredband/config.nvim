@@ -101,7 +101,7 @@ return { -- LSP Configuration & Plugins
       bashls = {
         filetypes = { 'sh', 'bats', 'bash' },
       },
-      biome = {},
+      -- biome = {},
       cssls = {},
       eslint = {},
       gopls = {},
@@ -149,6 +149,8 @@ return { -- LSP Configuration & Plugins
         },
       },
       marksman = {},
+      oxfmt = {},
+      oxlint = {},
       pgformatter = {},
       pyright = {
         settings = {
@@ -232,6 +234,8 @@ return { -- LSP Configuration & Plugins
       'jsonls',
       'lua_ls',
       'marksman',
+      'oxfmt',
+      'oxlint',
       'prettier',
       'pyright',
       'ruff',
