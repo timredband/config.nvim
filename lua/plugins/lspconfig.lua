@@ -149,8 +149,8 @@ return { -- LSP Configuration & Plugins
         },
       },
       marksman = {},
-      oxfmt = {},
-      oxlint = {},
+      -- oxfmt = {},
+      -- oxlint = {},
       pgformatter = {},
       pyright = {
         settings = {
